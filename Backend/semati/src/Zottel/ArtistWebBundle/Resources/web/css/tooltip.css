@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.aw-image_gallery_tooltip {
+	display: none;
+}
+
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+}

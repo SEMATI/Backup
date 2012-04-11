@@ -1,0 +1,27 @@
+form:
+  label_username:             Username
+  label_email:                E-Mail
+  label_plain_password:       Passwort (Plain)
+  label_groups:               Gruppen
+  label_roles:                Rollen
+  label_locked:               Gesperrt
+  label_expired:              Abgelaufen
+  label_enabled:              Aktiv
+  label_credentials_expired:  Berechtigungen abgelaufen
+  label_name:                 Name
+ 
+list:
+  label_username:             Username
+  label_email:                E-Mail
+  label_enabled:              Aktiv
+  label_locked:               Gesperrt
+  label_created_at:           Angelegt am
+  label_roles:                Rollen
+  label_name:                 Name
+ 
+filter:
+  label_username:             Username
+  label_locked:               Gesperrt
+  label_email:                E-Mail
+  label_id:                   ID
+  label_name:                 Name

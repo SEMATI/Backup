@@ -1,0 +1,55 @@
+{% extends 'ZottelArtistWebBundle::base.html.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+	
+	<script>
+		function aw_getImageDescription(elem) {
+			return $('#' + elem.attr("id") + '_tooltip').html();
+		}
+		function formatTitle(title, currentArray, currentIndex, currentOpts) {
+		    return 'Test';
+		}
+
+		$(document).ready(function() {
+			$('.aw-image_gallery a').each(function() {
+				var galElem = $(this);
+				galElem.fancybox({
+					showCloseButton: false,
+					titlePosition: 'inside',
+					titleFormat: function() {
+						return aw_getImageDescription(galElem);
+					}
+				});	
+				galElem.tooltip({
+					bodyHandler: function() { 
+						return aw_getImageDescription(galElem);
+				    }, 
+				    showURL: false
+				});
+				// remove title
+				galElem.find('img').each(function() {
+					$(this).attr('title', '');
+				});
+			});
+		});
+	</script> 
+{% endblock %}
+
+{% block body %}
+	<div class="aw-image_gallery_wrapper">
+		<h3>{{ gallery.name }}</h3>
+		<p>{{ gallery.description|nl2br }}</p>
+		<div class="aw-image_gallery">
+			{% for image in gallery.allMedia %}
+				<a rel="images" id="aw-image_gallery_element__{{ image.id }}" href="{% path image, gallery.defaultFormat %}">
+					{% media image, 'images_small' %}
+				</a>
+				<span class="aw-image_gallery_tooltip" id="aw-image_gallery_element__{{ image.id }}_tooltip">
+					Tooltip: {{ image.name }}
+				</span>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+

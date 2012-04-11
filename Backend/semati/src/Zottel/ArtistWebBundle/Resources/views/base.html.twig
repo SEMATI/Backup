@@ -1,0 +1,28 @@
+{#
+Base template for the Artist Web bundle.
+#}
+
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	{% stylesheets '@ZottelArtistWebBundle/Resources/web/css/*' %}
+		<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %} 
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	
+	{% javascripts 
+		'@ZottelArtistWebBundle/Resources/web/js/jquery.easing-1.3.pack.js'
+		'@ZottelArtistWebBundle/Resources/web/js/jquery.mousewheel-3.0.4.pack.js'
+		'@ZottelArtistWebBundle/Resources/web/js/jquery.dimensions.js'
+		'@ZottelArtistWebBundle/Resources/web/js/*' 
+	%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="aw-gallery_link">
+	{% set url = url('aw.gallery_show', {'slug' : gallery.urlSlug}) %}
+	{% if gallery.previewImage %}
+		<a class="aw-gallery_link_image" href="{{ url }}">
+			<img src="{% path gallery.previewImage, format|default('galnav') %} alt="{{ gallery.name }}"/>
+		</a>
+	{% endif %}
+	<a class="aw-gallery_link_name" href="{{ url }}">
+		<span>{{ gallery.name }}</span>
+	</a>
+</div>

@@ -1,0 +1,9 @@
+<div class="aw-gallery_navigation">
+	{% for gallery in galleries %}
+		<div class="aw-gallery_navigation_item">
+			{% include 'ZottelArtistWebBundle:Components:galleryLink.html.twig' with {'gallery' : gallery, 'format' : format} %}
+		</div>
+	{% else %}
+		{{ 'component.galnav.noEntries'|trans }}
+	{% endfor %}
+</div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry excluding="cache/" kind="src" path="app"/>
+	<buildpathentry excluding="bundles/Sensio/Bundle/GeneratorBundle/Resources/skeleton/|cg-library/tests/CG/Tests/Proxy/Fixture/LazyLoadingInterceptor.php|twig/test/Twig/Tests/integrationTest.php" kind="src" path="vendor"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path="web"/>
+	<buildpathentry kind="src" path="src"/>
+</buildpath>

@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.body_wrapper {
+	min-height: 700px;
+	width: 1000px;
+	margin-left: -500px;
+	left: 50%;
+	position: relative;
+	border: 1px solid black;
+}

@@ -1,0 +1,6 @@
+/Backend/semati/web/bundles/
+/Backend/semati/app/bootstrap*
+/Backend/semati/app/cache/*
+/Backend/semati/app/logs/*
+/Backend/semati/vendor/
+/Backend/semati/app/config/parameters.ini

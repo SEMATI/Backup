@@ -1,0 +1,6 @@
+services:
+    twig.extension.your_extension_name:
+        class: Zottel\ArtistWebBundle\Twig\Extension\ArtistWebTwigExtension
+        arguments: [ '@templating.helper.actions' ]
+        tags:
+            - { name: twig.extension }
