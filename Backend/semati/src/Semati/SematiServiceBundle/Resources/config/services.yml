@@ -1,0 +1,4 @@
+services:
+  shop_service:
+    class: Semati\SematiServiceBundle\Services\ShopService
+    arguments: ["@doctrine", "@security.encoder_factory"]

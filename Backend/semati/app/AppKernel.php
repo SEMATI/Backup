@@ -30,7 +30,7 @@ class AppKernel extends Kernel
         	new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
         	new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Zottel\ArtistWebBundle\ZottelArtistWebBundle(),
-            new Zottel\CarloSohlBundle\ZottelCarloSohlBundle(),
+            new Semati\SematiServiceBundle\SematiServiceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

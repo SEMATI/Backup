@@ -25,6 +25,7 @@ $loader->registerNamespaces(array(
     'Gaufrette'        => __DIR__.'/../vendor/gaufrette/src',
 	'Zottel'		   => __DIR__.'/../src/Zottel',
 	'Application'	   => __DIR__,
+	'Semati'		   => __DIR__.'/../src/Semati',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
