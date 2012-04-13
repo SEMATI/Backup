@@ -98,6 +98,18 @@
     git=http://github.com/sonata-project/SonataMediaBundle.git
     target=/bundles/Sonata/MediaBundle
 
+[SonataBlockBundle]
+    git=http://github.com/sonata-project/SonataBlockBundle.git
+    target=/bundles/Sonata/BlockBundle
+
+[SonataCacheBundle]
+    git=http://github.com/sonata-project/SonataCacheBundle.git
+    target=/bundles/Sonata/CacheBundle
+    
+[Exporter]
+    git=http://github.com/sonata-project/exporter.git
+    target=/exporter    
+
 [Imagine]:
     git=http://github.com/avalanche123/Imagine.git
     target=/imagine
