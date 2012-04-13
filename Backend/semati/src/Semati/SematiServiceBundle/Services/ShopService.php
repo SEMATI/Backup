@@ -21,30 +21,30 @@ class ShopService {
 	}
 	
 	
-	public function test($username, $password) {
+	private function validateUser($username, $password) {
 				
-		$user = $this->findUser($username);
+		$user = $user = $this->repository->findOneBy(array('username' => $username));
+		if (!$user) {
+			return false;
+		}
+		
 		$encoder = $this->encFactory->getEncoder($user);
 		$pw = $encoder->encodePassword($password, $user->getSalt());
 		
 		if ($pw == $user->getPassword()) {
-			return "valid";
+			return true;
 		}
 		
-		return "fuck";
+		return false;
 	}
 	
-	/**
-	 * 
-	 * @param unknown_type $username
-	 * @return User
-	 */
-	private function findUser($username) {
-		$user = $this->repository->findOneBy(array('username' => $username));
-		if (!$user) {
-			die("no such user");
+
+	public function getProducts($username, $password, $category = false) {
+		if (! $this->validateUser($username, $password)) {
+			return "Bad credentials";
 		}
-		return $user;
+		
+		
 	}
 	
 }
