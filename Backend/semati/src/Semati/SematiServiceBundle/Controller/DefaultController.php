@@ -21,18 +21,19 @@ class DefaultController extends Controller {
 		//$test = $shop->getCategories("admin", "password");
 		
 		//echo(print_r($test));
-		
+		/*
 		$assignedProducts = $shop->getProducts("admin", "password", "T-Shirts");
 		echo "<pre>";
 		var_dump($assignedProducts); // Will output assigned products.
 		echo "</pre>";
+		*/
 		//$client = new \soapclient('http://localhost/app_dev.php/soap?wsdl');
 		
 		
 		
 		//$result = $client->__call('getProducts', array('username' => 'admin', 'password' => 'password'));
 		
-		die (" ...");
+		return array();
 		
 	}
 	
