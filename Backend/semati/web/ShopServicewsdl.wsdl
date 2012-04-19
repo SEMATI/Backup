@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:tns="urn:arnleadservicewsdl"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     targetNamespace="urn:shopservicewsdl">
+  <types>
+   <xsd:schema targetNamespace="urn:shopwsdl">
+    <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+    <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+   </xsd:schema>
+  </types>
+  <message name="shopRequest">
+   <part name="username" type="xsd:string" />
+   <part name="password" type="xsd:string" />
+  </message>
+  <message name="shopResponse">
+   <part name="return" type="xsd:string" />
+  </message>
+  <portType name="shopwsdlPortType">
+   <operation name="getProducts">
+    <documentation>Get all products</documentation>
+    <input message="tns:shopRequest"/>
+    <output message="tns:shopResponse"/>
+   </operation>
+  </portType>
+  <binding name="shopwsdlBinding" type="tns:shopwsdlPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getProducts">
+   <soap:operation soapAction="urn:arnleadservicewsdl#getProducts" style="rpc"/>
+   <input>
+    <soap:body use="encoded" namespace="urn:shopwsdl"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </input>
+   <output>
+    <soap:body use="encoded" namespace="urn:shopwsdl"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="shopwsdl">
+  <port name="shopwsdlPort" binding="tns:shopwsdlBinding">
+   <soap:address location="localhost/app_dev.php/soap" />
+  </port>
+ </service>
+</definitions>
