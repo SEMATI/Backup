@@ -1,53 +1,29 @@
-<!DOCTYPE html>
-<!--[if IEMobile 7]><html class="iem7" lang="de" dir="ltr"><![endif]-->
-<!--[if (lte IE 6)&(!IEMobile)]><html class="ie6 ie6-7 ie6-8"  lang="de" dir="ltr"><![endif]-->
-<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8"  lang="de" dir="ltr"><![endif]-->
-<!--[if (IE 8)&(!IEMobile)]><html class="ie8 ie6-8"  lang="de" dir="ltr"><![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html  lang="de" dir="ltr"><!--<![endif]-->
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="MobileOptimized" content="width">
-	<meta name="HandheldFriendly" content="true">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta http-equiv="cleartype" content="on">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>FIGHTSTUFFWORLD</title>
-	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	{% block stylesheets %}
-        <link href="{{ asset('../../web/css/style.css') }}" type="text/css" rel="stylesheet" />
-    {% endblock %}
-</head>
-	<body>
-		<div class="outer-wrapper">
-			<a href="index.html" class="home_link">FIGHTSTUFFWORLD</a>
-			<div class="content-wrapper">
-				<a class="cat_link" href="web/cat.html">
-					<div class="cat">
-						<img src="images/cat_shirt.png" alt ="T-Shirts" />
-					</div>
-				</a>
-				<a class="cat_link" href="web/cat.html">
-					<div class="cat">
-						<img src="images/cat_shorts.png" alt ="T-Shirts" />
-					</div>
-				</a>
-				<a class="cat_link" href="web/cat.html">
-					<div class="cat">
-						<img src="images/cat_sweat.png" alt ="T-Shirts" />
-					</div>
-				</a>
-				<a class="cat_link" href="web/cat.html">
-					<div class="cat">
-						<img src="images/cat_schuhe.png" alt ="T-Shirts" />
-					</div>
-				</a>
-				<a class="cat_link" href="web/cat.html">
-					<div class="cat">
-						<img src="images/cat_sonst.png" alt ="T-Shirts" />
-					</div>
-				</a>
-			</div>
+{% extends 'SematiServiceBundle::frame.html.twig' %}
+
+{% block content %}
+    <a class="cat_link" href="app_dev.php/cat/T-Shirts">
+		<div class="cat">
+			<img src="images/cat_shirt.png" alt ="T-Shirts" />
 		</div>
-	</body>
-</html>
+	</a>
+	<a class="cat_link" href="app_dev.php/cat/Shorts">
+		<div class="cat">
+			<img src="images/cat_shorts.png" alt ="Shorts" />
+		</div>
+	</a>
+	<a class="cat_link" href="app_dev.php/cat/Sweatshirts">
+		<div class="cat">
+			<img src="images/cat_sweat.png" alt ="Sweatshirts" />
+		</div>
+	</a>
+	<a class="cat_link" href="app_dev.php/cat/Schuhe">
+		<div class="cat">
+			<img src="images/cat_schuhe.png" alt ="Schuhe" />
+		</div>
+	</a>
+	<a class="cat_link" href="app_dev.php/cat/Sonstiges">
+		<div class="cat">
+			<img src="images/cat_sonst.png" alt ="Sonstiges" />
+		</div>
+	</a>
+{% endblock %}

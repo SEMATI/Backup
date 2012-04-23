@@ -1,0 +1,20 @@
+{% extends 'SematiServiceBundle::frame.html.twig' %}
+
+{% block content %}
+    <h1 class="cat_u">T-SHIRTS:</h1>
+	<div class="bg-wrapper">
+		<div class="inner-wrapper">
+			{% for item in daten %}
+			<div class="product">
+				<img class="product_image" src="{{ item[0][0]['url'] }}" alt="{{ item[1]['name'] }}" />
+				<div class="add_info">
+					<span class="name">{{ item[1]['name'] }}</span><br />
+					<span class="price">{{ item[1]['price'] }} €</span>
+					<a class="details_button" href="/app_dev.php/product/{{ item[1]['product_id'] }}">Details</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

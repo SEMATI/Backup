@@ -45,7 +45,6 @@ class ShopService {
 		}
 		else{
 			$products = array();
-			$product = array();
 			
 			$proxy = new \SoapClient('http://www.fightstuff24.de.vu/index.php/api/soap/?wsdl');
 		    $sessionId = $proxy->login('apiUser', '123456');
@@ -78,15 +77,21 @@ class ShopService {
 		    	$assignedProducts = $proxy->call($sessionId, 'category.assignedProducts', array($this->getCategorieID($catNameSearch), 1));
 		    	$assignedProducts = $this->array_value_recursive("product_id", $assignedProducts);
 		    	
-		    	// TODO: Standardisation von Array...
-		    	$assignedProductPics = array();
-		    	foreach($assignedProducts as $assignedProduct){
-		    		$assignedProductPics = $proxy->call($sessionId, 'product_media.list', $assignedProduct); //foreach pic: url
-		    		array_push($product, $assignedProductPics);
-		    		
-		    		$assignedProduct = $proxy->call($sessionId, 'product.info', $assignedProduct); //description, price, name
-		    		array_push($product, $assignedProduct);
-		    		array_push($products, $product);
+		    	if($assignedProducts != null){
+			    	// TODO: Standardisation von Array...
+			    	$assignedProductPics = array();
+			    	foreach($assignedProducts as $assignedProduct){
+			    		$product = array();
+			    		$assignedProductPics = $proxy->call($sessionId, 'product_media.list', $assignedProduct); //foreach pic: url
+			    		array_push($product, $assignedProductPics);
+			    		
+			    		$assignedProduct = $proxy->call($sessionId, 'product.info', $assignedProduct); //description, price, name
+			    		array_push($product, $assignedProduct);
+			    		array_push($products, $product);
+			    	}
+		    	}
+		    	else{
+		    		return "no Products";
 		    	}
 		    }
 			return $products;

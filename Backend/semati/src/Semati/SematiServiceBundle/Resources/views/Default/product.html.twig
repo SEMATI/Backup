@@ -1,0 +1,22 @@
+{% extends 'SematiServiceBundle::frame.html.twig' %}
+
+{% block content %}
+    <div class="bg-wrapper">
+		<div class="inner-wrapper">
+			<div class="product_details">
+				<img class="product_image" src="{{ daten[0][0]['url'] }}" alt="shirt" />
+				<div class="add_info">
+					<span class="name">{{ daten[1]['name'] }}</span><br />
+					<span class="price">{{ daten[1]['price'] }} €</span>
+					<div class="buy">Jetzt kaufen</div>
+				</div>
+				<div class="clear"></div>
+				<div class="description">
+					<span>
+					{{ daten[1]['description'] }}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
